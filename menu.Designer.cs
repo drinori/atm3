@@ -60,14 +60,14 @@
             // 
             // labelWelcome
             // 
+            labelWelcome.AutoSize = true;
             labelWelcome.BackColor = Color.Transparent;
             labelWelcome.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelWelcome.ForeColor = Color.FromArgb(149, 165, 166);
-            labelWelcome.AutoSize = true;
             labelWelcome.Location = new Point(33, 29);
             labelWelcome.Margin = new Padding(4, 0, 4, 0);
             labelWelcome.Name = "labelWelcome";
-            labelWelcome.Size = new Size(0, 20);
+            labelWelcome.Size = new Size(0, 32);
             labelWelcome.TabIndex = 0;
             // 
             // label1
@@ -77,7 +77,7 @@
             label1.Location = new Point(163, 229);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 32);
             label1.TabIndex = 5;
             // 
             // label2
@@ -87,7 +87,7 @@
             label2.Location = new Point(432, 229);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(0, 25);
+            label2.Size = new Size(0, 32);
             label2.TabIndex = 6;
             // 
             // label3
@@ -97,7 +97,7 @@
             label3.Location = new Point(642, 229);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(0, 25);
+            label3.Size = new Size(0, 32);
             label3.TabIndex = 7;
             // 
             // label4
@@ -107,7 +107,7 @@
             label4.Location = new Point(163, 277);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(0, 25);
+            label4.Size = new Size(0, 32);
             label4.TabIndex = 8;
             // 
             // qkyqu
@@ -139,7 +139,7 @@
             terheqja.Location = new Point(529, 91);
             terheqja.Margin = new Padding(4, 3, 4, 3);
             terheqja.Name = "terheqja";
-            terheqja.Size = new Size(182, 40);
+            terheqja.Size = new Size(209, 40);
             terheqja.TabIndex = 10;
             terheqja.Text = "Tërheqje e mjeteve";
             terheqja.TextAlign = ContentAlignment.MiddleLeft;
@@ -153,7 +153,6 @@
             bilanci.FlatAppearance.MouseDownBackColor = Color.FromArgb(127, 140, 141);
             bilanci.FlatAppearance.MouseOverBackColor = Color.FromArgb(127, 140, 141);
             bilanci.FlatStyle = FlatStyle.Flat;
-          //bilanci.BackColor = SystemColors.ButtonFace;
             bilanci.Font = new Font("Segoe UI", 12F);
             bilanci.Location = new Point(72, 89);
             bilanci.Margin = new Padding(4, 3, 4, 3);
@@ -173,10 +172,10 @@
             transfer.FlatAppearance.MouseOverBackColor = Color.FromArgb(127, 140, 141);
             transfer.FlatStyle = FlatStyle.Flat;
             transfer.Font = new Font("Segoe UI", 12F);
-            transfer.Location = new Point(299, 183);
+            transfer.Location = new Point(290, 183);
             transfer.Margin = new Padding(4, 3, 4, 3);
             transfer.Name = "transfer";
-            transfer.Size = new Size(182, 42);
+            transfer.Size = new Size(209, 42);
             transfer.TabIndex = 12;
             transfer.Text = "Dërgo Para";
             transfer.UseVisualStyleBackColor = false;
@@ -190,10 +189,10 @@
             deponim.FlatAppearance.MouseOverBackColor = Color.FromArgb(127, 140, 141);
             deponim.FlatStyle = FlatStyle.Flat;
             deponim.Font = new Font("Segoe UI", 12F);
-            deponim.Location = new Point(297, 89);
+            deponim.Location = new Point(290, 91);
             deponim.Margin = new Padding(4, 3, 4, 3);
             deponim.Name = "deponim";
-            deponim.Size = new Size(182, 42);
+            deponim.Size = new Size(209, 42);
             deponim.TabIndex = 13;
             deponim.Text = "Deponim i mjeteve";
             deponim.TextAlign = ContentAlignment.MiddleLeft;
@@ -201,7 +200,7 @@
             deponim.Click += deponim_Click;
             // 
             // kerko
-            //
+            // 
             kerko.BackColor = Color.FromArgb(149, 165, 167);
             kerko.FlatAppearance.BorderSize = 0;
             kerko.FlatAppearance.MouseDownBackColor = Color.FromArgb(127, 140, 141);
@@ -229,7 +228,7 @@
             historiku.Location = new Point(529, 183);
             historiku.Margin = new Padding(4);
             historiku.Name = "historiku";
-            historiku.Size = new Size(182, 42);
+            historiku.Size = new Size(209, 42);
             historiku.TabIndex = 15;
             historiku.Text = "Historiku i transfereve";
             historiku.TextAlign = ContentAlignment.MiddleLeft;
@@ -237,7 +236,7 @@
             historiku.Click += historiku_Click;
             // 
             // mesazhet
-            //
+            // 
             mesazhet.BackColor = Color.FromArgb(149, 165, 166);
             mesazhet.FlatAppearance.BorderSize = 0;
             mesazhet.FlatAppearance.MouseDownBackColor = Color.FromArgb(127, 140, 141);
@@ -256,9 +255,9 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(675, 189);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(707, 188);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(29, 32);
@@ -268,9 +267,9 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Location = new Point(675, 97);
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(707, 101);
             pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(28, 26);
@@ -280,9 +279,9 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.Location = new Point(215, 189);
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(218, 189);
             pictureBox3.Margin = new Padding(4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(32, 31);
@@ -292,9 +291,9 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.Location = new Point(439, 95);
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(465, 96);
             pictureBox4.Margin = new Padding(4);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(35, 32);
@@ -303,10 +302,9 @@
             // 
             // pictureBox5
             // 
-            //pictureBox5.BackColor = SystemColors.ButtonFace;
             pictureBox5.BackColor = Color.FromArgb(149, 165, 166);
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.Location = new Point(199, 93);
+            pictureBox5.Location = new Point(207, 93);
             pictureBox5.Margin = new Padding(4);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 34);
@@ -316,9 +314,9 @@
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.Location = new Point(439, 189);
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(456, 188);
             pictureBox6.Margin = new Padding(4);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(33, 32);
@@ -328,8 +326,8 @@
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.FromArgb(149, 165, 166);
-            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.Location = new Point(211, 271);
             pictureBox7.Margin = new Padding(4);
             pictureBox7.Name = "pictureBox7";
@@ -339,9 +337,8 @@
             // 
             // menu
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(816, 407);
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
@@ -364,7 +361,6 @@
             Controls.Add(label1);
             Controls.Add(labelWelcome);
             Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "menu";
             Text = "Tërheqje e mjeteve";

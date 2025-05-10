@@ -36,18 +36,19 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // Kyqu
             // 
             Kyqu.Font = new Font("Segoe UI", 14F);
-            Kyqu.Location = new Point(44, 230);
-            Kyqu.Margin = new Padding(3, 2, 3, 2);
+            Kyqu.Location = new Point(50, 307);
             Kyqu.Name = "Kyqu";
-            Kyqu.Size = new Size(146, 37);
+            Kyqu.Size = new Size(167, 49);
             Kyqu.TabIndex = 0;
             Kyqu.Text = "Kyçu";
             Kyqu.UseVisualStyleBackColor = true;
@@ -55,31 +56,29 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(44, 69);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(50, 92);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "IBAN";
-            textBox1.Size = new Size(247, 36);
+            textBox1.Size = new Size(282, 47);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(44, 153);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(50, 204);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "PIN";
-            textBox2.Size = new Size(247, 36);
+            textBox2.Size = new Size(282, 47);
             textBox2.TabIndex = 2;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 12F);
-            linkLabel1.Location = new Point(191, 246);
+            linkLabel1.Location = new Point(218, 328);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(90, 21);
+            linkLabel1.Size = new Size(111, 28);
             linkLabel1.TabIndex = 3;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Regjistrohu";
@@ -93,44 +92,56 @@
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(Kyqu);
-            panel1.Location = new Point(374, 0);
+            panel1.Location = new Point(427, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(327, 337);
+            panel1.Size = new Size(374, 449);
             panel1.TabIndex = 4;
             // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Location = new Point(11, 156);
+            pictureBox2.Location = new Point(19, 209);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(33, 30);
+            pictureBox2.Size = new Size(31, 32);
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(9, 69);
+            pictureBox1.Location = new Point(16, 96);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 34);
+            pictureBox1.Size = new Size(34, 32);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(49, 59);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(331, 279);
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
             // kyqja
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
+            Controls.Add(pictureBox3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "kyqja";
             Text = "kyqja";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -143,5 +154,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }
