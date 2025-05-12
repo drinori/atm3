@@ -1,4 +1,6 @@
-﻿namespace atm
+﻿using System.Windows.Forms;
+
+namespace atm
 {
     partial class kyqja
     {
@@ -34,19 +36,17 @@
             textBox2 = new TextBox();
             linkLabel1 = new LinkLabel();
             panel1 = new Panel();
+            panel3 = new Panel();
+            panel2 = new Panel();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // Kyqu
             // 
             Kyqu.Font = new Font("Segoe UI", 14F);
-            Kyqu.Location = new Point(50, 307);
+            Kyqu.Location = new Point(747, 381);
             Kyqu.Name = "Kyqu";
             Kyqu.Size = new Size(167, 49);
             Kyqu.TabIndex = 0;
@@ -56,7 +56,8 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(50, 92);
+            textBox1.Font = new Font("Segoe UI", 18F);
+            textBox1.Location = new Point(747, 141);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "IBAN";
@@ -65,8 +66,8 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(50, 204);
-            textBox2.Multiline = true;
+            textBox2.Font = new Font("Segoe UI", 18F);
+            textBox2.Location = new Point(747, 274);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "PIN";
             textBox2.Size = new Size(282, 47);
@@ -76,7 +77,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 12F);
-            linkLabel1.Location = new Point(218, 328);
+            linkLabel1.Location = new Point(920, 402);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(111, 28);
             linkLabel1.TabIndex = 3;
@@ -86,63 +87,64 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(Kyqu);
-            panel1.Location = new Point(427, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(0, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(374, 449);
-            panel1.TabIndex = 4;
+            panel1.Size = new Size(1111, 576);
+            panel1.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Location = new Point(706, 278);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(42, 35);
+            panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.Location = new Point(704, 145);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(42, 35);
+            panel2.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Location = new Point(19, 209);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 71);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 32);
-            pictureBox2.TabIndex = 5;
+            pictureBox2.Size = new Size(704, 421);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(16, 96);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 32);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(49, 59);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(331, 279);
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
             // 
             // kyqja
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
-            Controls.Add(pictureBox3);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(1111, 576);
+            Controls.Add(linkLabel1);
+            Controls.Add(textBox1);
+            Controls.Add(Kyqu);
+            Controls.Add(textBox2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "kyqja";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "kyqja";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -151,9 +153,10 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private LinkLabel linkLabel1;
-        private Panel panel1;
         private PictureBox pictureBox1;
+        private Panel panel1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private Panel panel2;
+        private Panel panel3;
     }
 }
