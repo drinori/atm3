@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace atm
 {
@@ -25,9 +24,9 @@ namespace atm
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                connection.Open();
                 try
                 {
-                    connection.Open();
                     string query = "SELECT emri, iban FROM perdoruesit WHERE iban = @Iban AND pin = @Pin";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -48,13 +47,15 @@ namespace atm
                             else
                             {
                                 MessageBox.Show("Iban ose PIN i gabuar.");
+                                textBox1.Clear();
+                                textBox2.Clear();
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ndodhi nje gabim: " + ex.Message, "Gabim", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ndodhi nje gabim: " + ex.Message);
                 }
             }
         }

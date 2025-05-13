@@ -28,43 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button3 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(deponim));
             button2 = new Button();
             button1 = new Button();
             textBox1 = new TextBox();
-            panel1.SuspendLayout();
+            panel2 = new Panel();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(-1, 333);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(843, 72);
-            panel1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(342, 12);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(156, 51);
-            button3.TabIndex = 4;
-            button3.Text = "Anulo";
-            button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(602, 12);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(779, 499);
             button2.Name = "button2";
-            button2.Size = new Size(163, 51);
+            button2.Size = new Size(253, 68);
             button2.TabIndex = 3;
             button2.Text = "Vazhdo";
             button2.UseVisualStyleBackColor = true;
@@ -73,10 +50,9 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(75, 12);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(134, 499);
             button1.Name = "button1";
-            button1.Size = new Size(156, 51);
+            button1.Size = new Size(253, 68);
             button1.TabIndex = 2;
             button1.Text = "Kthehu";
             button1.UseVisualStyleBackColor = true;
@@ -84,35 +60,44 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(255, 168);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
+            textBox1.Font = new Font("Segoe UI", 19F);
+            textBox1.Location = new Point(386, 268);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(340, 50);
+            textBox1.Size = new Size(388, 50);
             textBox1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(button2);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1111, 576);
+            panel2.TabIndex = 2;
             // 
             // deponim
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 405);
-            Controls.Add(panel1);
-            Controls.Add(textBox1);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(1111, 576);
+            Controls.Add(panel2);
             Name = "deponim";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private TextBox textBox1;
-        private Panel panel1;
-        private Button button3;
         private Button button2;
         private Button button1;
+        private Panel panel2;
     }
 }

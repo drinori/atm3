@@ -43,12 +43,13 @@
             historiku = new Button();
             mesazhet = new Button();
             panel1 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
+            panel8 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -113,10 +114,10 @@
             qkyqu.FlatStyle = FlatStyle.Flat;
             qkyqu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             qkyqu.ForeColor = SystemColors.ButtonFace;
-            qkyqu.Location = new Point(847, 445);
+            qkyqu.Location = new Point(752, 423);
             qkyqu.Margin = new Padding(4, 3, 4, 3);
             qkyqu.Name = "qkyqu";
-            qkyqu.Size = new Size(182, 39);
+            qkyqu.Size = new Size(290, 61);
             qkyqu.TabIndex = 9;
             qkyqu.Text = "Çkyçu";
             qkyqu.UseVisualStyleBackColor = false;
@@ -250,6 +251,7 @@
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(bilanci);
@@ -269,6 +271,46 @@
             panel1.Size = new Size(1110, 577);
             panel1.TabIndex = 24;
             // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Transparent;
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Zoom;
+            panel7.Location = new Point(265, 292);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(46, 41);
+            panel7.TabIndex = 23;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
+            panel6.BackgroundImageLayout = ImageLayout.Zoom;
+            panel6.Location = new Point(265, 135);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(46, 41);
+            panel6.TabIndex = 22;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
+            panel5.BackgroundImageLayout = ImageLayout.Zoom;
+            panel5.Location = new Point(608, 135);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(46, 41);
+            panel5.TabIndex = 22;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BackgroundImageLayout = ImageLayout.Zoom;
+            panel4.Location = new Point(608, 292);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(46, 41);
+            panel4.TabIndex = 21;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.Transparent;
@@ -284,50 +326,20 @@
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Zoom;
-            panel2.Location = new Point(994, 135);
+            panel2.Location = new Point(985, 135);
             panel2.Name = "panel2";
             panel2.Size = new Size(46, 41);
             panel2.TabIndex = 11;
             // 
-            // panel4
+            // panel8
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
-            panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Location = new Point(617, 292);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(46, 41);
-            panel4.TabIndex = 21;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(617, 135);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(46, 41);
-            panel5.TabIndex = 22;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Transparent;
-            panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
-            panel6.BackgroundImageLayout = ImageLayout.Zoom;
-            panel6.Location = new Point(265, 135);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(46, 41);
-            panel6.TabIndex = 22;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Transparent;
-            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
-            panel7.BackgroundImageLayout = ImageLayout.Zoom;
-            panel7.Location = new Point(265, 292);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(46, 41);
-            panel7.TabIndex = 23;
+            panel8.BackColor = Color.Transparent;
+            panel8.BackgroundImage = (Image)resources.GetObject("panel8.BackgroundImage");
+            panel8.BackgroundImageLayout = ImageLayout.Zoom;
+            panel8.Location = new Point(265, 434);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(46, 41);
+            panel8.TabIndex = 24;
             // 
             // menu
             // 
@@ -369,5 +381,6 @@
         private Panel panel4;
         private Panel panel7;
         private Panel panel6;
+        private Panel panel8;
     }
 }

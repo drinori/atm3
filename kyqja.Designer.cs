@@ -120,7 +120,7 @@ namespace atm
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 71);
+            pictureBox2.Location = new Point(-6, 47);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(704, 421);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;

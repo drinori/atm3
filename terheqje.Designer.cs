@@ -28,29 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(terheqje));
             textBox1 = new TextBox();
             button1 = new Button();
             panel1 = new Panel();
             button3 = new Button();
-            button2 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(264, 164);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
+            textBox1.Font = new Font("Segoe UI", 19F);
+            textBox1.Location = new Point(396, 272);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(229, 33);
+            textBox1.Size = new Size(371, 50);
             textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(65, 2);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(124, 484);
             button1.Name = "button1";
-            button1.Size = new Size(144, 46);
+            button1.Size = new Size(253, 68);
             button1.TabIndex = 1;
             button1.Text = "Kthehu";
             button1.UseVisualStyleBackColor = true;
@@ -58,50 +56,37 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(-2, 320);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(808, 50);
+            panel1.Size = new Size(1111, 576);
             panel1.TabIndex = 2;
             // 
             // button3
             // 
-            button3.Location = new Point(551, 2);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(786, 484);
             button3.Name = "button3";
-            button3.Size = new Size(144, 46);
+            button3.Size = new Size(253, 68);
             button3.TabIndex = 3;
             button3.Text = "Vazhdo";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(318, 2);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(144, 46);
-            button2.TabIndex = 2;
-            button2.Text = "Anulo";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // terheqje
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(807, 370);
+            ClientSize = new Size(1111, 576);
             Controls.Add(panel1);
-            Controls.Add(textBox1);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "terheqje";
             Text = "Form1";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
