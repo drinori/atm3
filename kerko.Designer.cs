@@ -33,13 +33,13 @@
             // 
             panel2.BackColor = Color.FromArgb(248, 249, 250);
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.BackgroundImageLayout = ImageLayout.Center;
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1129, 568);
+            panel2.Size = new Size(1111, 576);
             panel2.TabIndex = 7;
             // 
             // panel1
@@ -47,7 +47,7 @@
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Location = new Point(515, 60);
+            panel1.Location = new Point(493, 39);
             panel1.Name = "panel1";
             panel1.Size = new Size(602, 469);
             panel1.TabIndex = 6;
@@ -128,7 +128,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1129, 568);
+            ClientSize = new Size(1111, 576);
             Controls.Add(lblTitle);
             Controls.Add(recipientIbanTextBox);
             Controls.Add(messageTextBox);
@@ -136,7 +136,6 @@
             Controls.Add(amountTextBox);
             Controls.Add(requestButton);
             Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "kerko";
             StartPosition = FormStartPosition.CenterScreen;

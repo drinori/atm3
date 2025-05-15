@@ -106,6 +106,7 @@
             // panel2
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Center;
             panel2.Controls.Add(lblTitle);
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(send);
@@ -113,7 +114,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1129, 586);
+            panel2.Size = new Size(1111, 576);
             panel2.TabIndex = 6;
             // 
             // lblTitle
@@ -131,13 +132,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1129, 586);
+            ClientSize = new Size(1111, 576);
             Controls.Add(shuma);
             Controls.Add(marresiIBAN);
             Controls.Add(messagebox);
             Controls.Add(panel2);
             Margin = new Padding(3, 4, 3, 4);
             Name = "dergo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "dergo";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

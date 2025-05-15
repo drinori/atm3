@@ -43,13 +43,13 @@
             historiku = new Button();
             mesazhet = new Button();
             panel1 = new Panel();
+            panel8 = new Panel();
             panel7 = new Panel();
             panel6 = new Panel();
             panel5 = new Panel();
             panel4 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
-            panel8 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -250,7 +250,7 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
@@ -266,10 +266,20 @@
             panel1.Controls.Add(qkyqu);
             panel1.Controls.Add(deponim);
             panel1.Controls.Add(transfer);
-            panel1.Location = new Point(1, 0);
+            panel1.Location = new Point(-5, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1110, 577);
+            panel1.Size = new Size(1116, 577);
             panel1.TabIndex = 24;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Transparent;
+            panel8.BackgroundImage = (Image)resources.GetObject("panel8.BackgroundImage");
+            panel8.BackgroundImageLayout = ImageLayout.Zoom;
+            panel8.Location = new Point(265, 434);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(46, 41);
+            panel8.TabIndex = 24;
             // 
             // panel7
             // 
@@ -330,16 +340,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(46, 41);
             panel2.TabIndex = 11;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.Transparent;
-            panel8.BackgroundImage = (Image)resources.GetObject("panel8.BackgroundImage");
-            panel8.BackgroundImageLayout = ImageLayout.Zoom;
-            panel8.Location = new Point(265, 434);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(46, 41);
-            panel8.TabIndex = 24;
             // 
             // menu
             // 

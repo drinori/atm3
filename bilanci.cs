@@ -11,11 +11,6 @@ namespace atm
         public bilanci()
         {
             InitializeComponent();
-        }
-
-        private void bilanci_Load(object sender, EventArgs e)
-        {
-            // Get the user's IBAN from the parent (menu) form
             menu parentForm = this.Owner as menu;
             if (parentForm != null && !string.IsNullOrEmpty(parentForm.UserIban))
             {

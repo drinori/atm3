@@ -131,7 +131,7 @@ namespace atm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1111, 576);
             Controls.Add(linkLabel1);
             Controls.Add(textBox1);

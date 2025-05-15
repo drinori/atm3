@@ -92,7 +92,6 @@
             Name = "bilanci";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bilanci";
-            Load += bilanci_Load;
             ResumeLayout(false);
             PerformLayout();
         }

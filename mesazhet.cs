@@ -9,7 +9,7 @@ namespace atm
     public partial class mesazhet : Form
     {
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\LENOVO\\Documents\\atmoop.mdf;Integrated Security=True;Connect Timeout=30";
-        private string currentUserIban;
+        string currentUserIban;
 
         public mesazhet(string userIban)
         {

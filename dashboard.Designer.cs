@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
             button1 = new Button();
             button3 = new Button();
@@ -47,7 +46,7 @@
             button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 112, 103);
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 19F);
-            button1.Location = new Point(580, 408);
+            button1.Location = new Point(623, 408);
             button1.Name = "button1";
             button1.Size = new Size(261, 77);
             button1.TabIndex = 0;
@@ -64,7 +63,7 @@
             button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(245, 112, 103);
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 19F);
-            button3.Location = new Point(236, 408);
+            button3.Location = new Point(250, 408);
             button3.Name = "button3";
             button3.Size = new Size(261, 77);
             button3.TabIndex = 2;
@@ -87,6 +86,7 @@
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(button3);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox2);
             panel1.Location = new Point(-3, 0);
@@ -101,7 +101,6 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.ScrollBar;
             ClientSize = new Size(1102, 572);
-            Controls.Add(button3);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 24F);
             Name = "dashboard";
