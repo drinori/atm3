@@ -26,6 +26,16 @@ namespace atm
 
         private void Mesazhet_Load(object sender, EventArgs e)
         {
+            // Add the action column if it doesn't exist
+            if (!requestsDataGridView.Columns.Contains("colVeprim"))
+            {
+                DataGridViewColumn actionColumn = new DataGridViewColumn();
+                actionColumn.Name = "colVeprim";
+                actionColumn.HeaderText = "Veprim";
+                actionColumn.CellTemplate = new DataGridViewTextBoxCell();
+                requestsDataGridView.Columns.Add(actionColumn);
+            }
+
             LoadRequests();
         }
 
@@ -53,6 +63,13 @@ namespace atm
                     adapter.Fill(dataTable);
 
                     requestsDataGridView.DataSource = dataTable;
+
+                    // Make sure the columns exist in the DataGridView
+                    if (requestsDataGridView.Columns.Contains("Id"))
+                        requestsDataGridView.Columns["Id"].Visible = false;
+
+                    if (requestsDataGridView.Columns.Contains("Statusi"))
+                        requestsDataGridView.Columns["Statusi"].HeaderText = "Statusi";
                 }
             }
             catch (Exception ex)
@@ -63,61 +80,65 @@ namespace atm
 
         private void RequestsDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            // Check if it's the Veprim column but not the header
-            if (e.ColumnIndex == requestsDataGridView.Columns["colVeprim"].Index && e.RowIndex >= 0)
+            // Only paint the action column and not the header
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 &&
+                requestsDataGridView.Columns[e.ColumnIndex].Name == "colVeprim")
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
 
-                // Define button rectangles (left half for Approve, right half for Decline)
-                Rectangle approveRect = new Rectangle(
-                    e.CellBounds.X + 5,
-                    e.CellBounds.Y + 5,
-                    (e.CellBounds.Width / 2) - 10,
-                    e.CellBounds.Height - 10);
-
-                Rectangle declineRect = new Rectangle(
-                    e.CellBounds.X + (e.CellBounds.Width / 2) + 5,
-                    e.CellBounds.Y + 5,
-                    (e.CellBounds.Width / 2) - 10,
-                    e.CellBounds.Height - 10);
-
-                // Check if the status is PENDING to determine if buttons should be active
-                string status = e.RowIndex >= 0 && requestsDataGridView.Rows[e.RowIndex].Cells["colStatusi"].Value != null
-                    ? requestsDataGridView.Rows[e.RowIndex].Cells["colStatusi"].Value.ToString()
-                    : "";
+                // Get the status value
+                string status = "";
+                if (requestsDataGridView.Columns.Contains("Statusi") &&
+                    requestsDataGridView.Rows[e.RowIndex].Cells["Statusi"].Value != null)
+                {
+                    status = requestsDataGridView.Rows[e.RowIndex].Cells["Statusi"].Value.ToString();
+                }
 
                 bool isActive = status == "PENDING";
 
-                // Draw Approve button (green)
-                using (var approveButtonBrush = new SolidBrush(isActive ? Color.FromArgb(76, 175, 80) : Color.FromArgb(200, 200, 200)))
-                using (var buttonTextBrush = new SolidBrush(Color.White))
-                using (var buttonFont = new Font("Segoe UI", 9))
+                // Define button rectangles (left half for Approve, right half for Decline)
+                Rectangle approveRect = new Rectangle(
+                    e.CellBounds.X + 2,
+                    e.CellBounds.Y + 2,
+                    (e.CellBounds.Width / 2) - 4,
+                    e.CellBounds.Height - 4);
+
+                Rectangle declineRect = new Rectangle(
+                    e.CellBounds.X + (e.CellBounds.Width / 2) + 2,
+                    e.CellBounds.Y + 2,
+                    (e.CellBounds.Width / 2) - 4,
+                    e.CellBounds.Height - 4);
+
+                // Draw Approve button (green if active, gray if not)
+                using (var approveButtonBrush = new SolidBrush(isActive ? Color.FromArgb(76, 175, 80) : Color.LightGray))
+                using (var buttonTextBrush = new SolidBrush(isActive ? Color.White : Color.DarkGray))
+                using (var buttonFont = new Font("Segoe UI", 8, FontStyle.Bold))
                 {
                     e.Graphics.FillRectangle(approveButtonBrush, approveRect);
+                    e.Graphics.DrawRectangle(Pens.DarkGray, approveRect);
 
                     // Center the text
-                    SizeF textSize = e.Graphics.MeasureString("Aprovo", buttonFont);
-                    PointF textPos = new PointF(
-                        approveRect.X + (approveRect.Width - textSize.Width) / 2,
-                        approveRect.Y + (approveRect.Height - textSize.Height) / 2);
+                    StringFormat sf = new StringFormat();
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
 
-                    e.Graphics.DrawString("Aprovo", buttonFont, buttonTextBrush, textPos);
+                    e.Graphics.DrawString("Aprovo", buttonFont, buttonTextBrush, approveRect, sf);
                 }
 
-                // Draw Decline button (red)
-                using (var declineButtonBrush = new SolidBrush(isActive ? Color.FromArgb(244, 67, 54) : Color.FromArgb(200, 200, 200)))
-                using (var buttonTextBrush = new SolidBrush(Color.White))
-                using (var buttonFont = new Font("Segoe UI", 9))
+                // Draw Decline button (red if active, gray if not)
+                using (var declineButtonBrush = new SolidBrush(isActive ? Color.FromArgb(244, 67, 54) : Color.LightGray))
+                using (var buttonTextBrush = new SolidBrush(isActive ? Color.White : Color.DarkGray))
+                using (var buttonFont = new Font("Segoe UI", 8, FontStyle.Bold))
                 {
                     e.Graphics.FillRectangle(declineButtonBrush, declineRect);
+                    e.Graphics.DrawRectangle(Pens.DarkGray, declineRect);
 
                     // Center the text
-                    SizeF textSize = e.Graphics.MeasureString("Refuzo", buttonFont);
-                    PointF textPos = new PointF(
-                        declineRect.X + (declineRect.Width - textSize.Width) / 2,
-                        declineRect.Y + (declineRect.Height - textSize.Height) / 2);
+                    StringFormat sf = new StringFormat();
+                    sf.Alignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Center;
 
-                    e.Graphics.DrawString("Refuzo", buttonFont, buttonTextBrush, textPos);
+                    e.Graphics.DrawString("Refuzo", buttonFont, buttonTextBrush, declineRect, sf);
                 }
 
                 e.Handled = true;
@@ -126,33 +147,39 @@ namespace atm
 
         private void RequestsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if it's the Veprim column and not the header row
-            if (e.ColumnIndex == requestsDataGridView.Columns["colVeprim"].Index && e.RowIndex >= 0)
+            // Only handle clicks on the action column and not the header
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 &&
+                requestsDataGridView.Columns[e.ColumnIndex].Name == "colVeprim")
             {
-                // Get the status to check if it's PENDING
-                string status = requestsDataGridView.Rows[e.RowIndex].Cells["colStatusi"].Value?.ToString() ?? "";
+                // Get the status value
+                string status = "";
+                if (requestsDataGridView.Columns.Contains("Statusi") &&
+                    requestsDataGridView.Rows[e.RowIndex].Cells["Statusi"].Value != null)
+                {
+                    status = requestsDataGridView.Rows[e.RowIndex].Cells["Statusi"].Value.ToString();
+                }
 
+                // Only allow actions if status is PENDING
                 if (status != "PENDING")
                 {
-                    MessageBox.Show("Mund të veproni vetëm në kërkesa të papërgjigjura!", "Kujdes");
+                    MessageBox.Show("Mund të veproni vetëm në kërkesa me status PENDING");
                     return;
                 }
 
-                // Get the cell boundaries
-                Rectangle cellBounds = requestsDataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-
-                // Get the mouse position relative to the cell
-                Point relativePoint = requestsDataGridView.PointToClient(Cursor.Position);
-                relativePoint = new Point(relativePoint.X - cellBounds.X, relativePoint.Y - cellBounds.Y);
-
                 // Get the request ID
-                int requestId = Convert.ToInt32(requestsDataGridView.Rows[e.RowIndex].Cells["colId"].Value);
+                int requestId = Convert.ToInt32(requestsDataGridView.Rows[e.RowIndex].Cells["Id"].Value);
 
-                // Check if click was in left or right half of the cell
-                if (relativePoint.X < cellBounds.Width / 2)
+                // Get the click position relative to the cell
+                DataGridViewCell cell = requestsDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                Rectangle cellRect = requestsDataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                Point clickPosition = requestsDataGridView.PointToClient(Cursor.Position);
+                int xRelative = clickPosition.X - cellRect.X;
+
+                // Check which button was clicked
+                if (xRelative < cellRect.Width / 2)
                 {
                     // Approve button clicked
-                    if (MessageBox.Show("Aprovo kërkesën?", "Konfirmim", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("A jeni i sigurtë që dëshironi të aprovoni këtë kërkesë?", "Konfirmim", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         ApproveRequest(requestId);
                     }
@@ -160,7 +187,7 @@ namespace atm
                 else
                 {
                     // Decline button clicked
-                    if (MessageBox.Show("Refuzo kërkesën?", "Konfirmim", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("A jeni i sigurtë që dëshironi të refuzoni këtë kërkesë?", "Konfirmim", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         DeclineRequest(requestId);
                     }
@@ -179,6 +206,7 @@ namespace atm
 
                     try
                     {
+                        // 1. Get request details
                         string getQuery = @"SELECT iban, shuma 
                                           FROM kerkesat_para 
                                           WHERE Id = @Id AND statusi = 'PENDING'";
@@ -193,18 +221,32 @@ namespace atm
                                 decimal amount = Convert.ToDecimal(reader["shuma"]);
                                 reader.Close();
 
+                                // 2. Check if current user has enough balance
                                 decimal balance = GetAccountBalance(currentUserIban, connection, transaction);
                                 if (balance < amount)
                                 {
-                                    throw new Exception("Nuk keni fonde të mjaftueshme!");
+                                    transaction.Rollback();
+                                    MessageBox.Show("Fonde të pamjaftueshme! Ju nuk mund ta aprovoni këtë kërkesë.");
+                                    return;
                                 }
 
+                                // 3. Transfer money
                                 TransferMoney(currentUserIban, requesterIban, amount, connection, transaction);
+
+                                // 4. Update request status
                                 UpdateRequestStatus(requestId, "APPROVED", connection, transaction);
+
+                                // 5. Create transaction record
+                                CreateTransactionRecord(currentUserIban, requesterIban, amount, "TRANSFER", connection, transaction);
 
                                 transaction.Commit();
                                 MessageBox.Show("Kërkesa u aprovua me sukses!");
                                 LoadRequests();
+                            }
+                            else
+                            {
+                                transaction.Rollback();
+                                MessageBox.Show("Kërkesa nuk u gjet ose është përpunuar tashmë.");
                             }
                         }
                     }
@@ -239,8 +281,12 @@ namespace atm
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Kërkesa u refuzua!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Kërkesa u refuzua me sukses!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadRequests();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kërkesa nuk u gjet ose është përpunuar tashmë.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -260,12 +306,14 @@ namespace atm
 
         private void TransferMoney(string fromIban, string toIban, decimal amount, SqlConnection connection, SqlTransaction transaction)
         {
+            // Deduct from sender
             string deductQuery = "UPDATE perdoruesit SET bilanci = bilanci - @amount WHERE iban = @iban";
             SqlCommand deductCmd = new SqlCommand(deductQuery, connection, transaction);
             deductCmd.Parameters.AddWithValue("@amount", amount);
             deductCmd.Parameters.AddWithValue("@iban", fromIban);
             deductCmd.ExecuteNonQuery();
 
+            // Add to receiver
             string addQuery = "UPDATE perdoruesit SET bilanci = bilanci + @amount WHERE iban = @iban";
             SqlCommand addCmd = new SqlCommand(addQuery, connection, transaction);
             addCmd.Parameters.AddWithValue("@amount", amount);
@@ -282,6 +330,23 @@ namespace atm
             command.ExecuteNonQuery();
         }
 
+        private void CreateTransactionRecord(string fromIban, string toIban, decimal amount, string type,
+                                           SqlConnection connection, SqlTransaction transaction)
+        {
+            string query = @"INSERT INTO transaksionet (iban, tipi, iban_marresit, shuma, Tdata, perdoruesiID)
+                           VALUES (@iban, @tipi, @ibanMarresi, @shuma, @tdata, 
+                                   (SELECT Id FROM perdoruesit WHERE iban = @iban))";
+
+            SqlCommand command = new SqlCommand(query, connection, transaction);
+            command.Parameters.AddWithValue("@iban", fromIban);
+            command.Parameters.AddWithValue("@tipi", type);
+            command.Parameters.AddWithValue("@ibanMarresi", toIban);
+            command.Parameters.AddWithValue("@shuma", amount);
+            command.Parameters.AddWithValue("@tdata", DateTime.Now);
+
+            command.ExecuteNonQuery();
+        }
+
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             LoadRequests();
@@ -289,17 +354,11 @@ namespace atm
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            if (this.Owner != null && this.Owner is menu)
+            if (this.Owner != null)
             {
                 this.Owner.Show();
-                this.Close();
             }
-            else
-            {
-                menu menuForm = new menu("User", "");
-                menuForm.Show();
-                this.Close();
-            }
+            this.Close();
         }
     }
 }

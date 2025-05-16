@@ -58,7 +58,6 @@ namespace atm
             // 
             textBox1.Font = new Font("Segoe UI", 18F);
             textBox1.Location = new Point(747, 141);
-            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "IBAN";
             textBox1.Size = new Size(282, 47);
@@ -71,7 +70,7 @@ namespace atm
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "PIN";
             textBox2.Size = new Size(282, 47);
-            textBox2.TabIndex = 2;
+            textBox2.TabIndex = 1;
             // 
             // linkLabel1
             // 
